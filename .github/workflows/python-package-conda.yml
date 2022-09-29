@@ -25,6 +25,6 @@ jobs:
       - name: Push output files        
         run: |          
           git config --global user.name "constancecrozier"              
-          git add -all      
+          git add --all      
           git commit -m "New Data"          
           git push
