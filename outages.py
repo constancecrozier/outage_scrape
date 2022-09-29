@@ -11,11 +11,11 @@ def scrape():
 
     i = 0
     while i < len(r)-10:
-        while r[i:i+11] != '{"ZIPCODE":':
+        while r[i:i+11] != '{"ZIPCODE":' and i < len(r)-1:
             i += 1
         i += 1
         j = i+1
-        while r[j:j+2] != '}}':
+        while r[j:j+2] != '}}' and i < len(r)-1:
             j += 1
         data.append(r[i:j])
         i = j
