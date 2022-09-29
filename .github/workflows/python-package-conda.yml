@@ -20,6 +20,7 @@ jobs:
       - name: execute py script # run the run.py to get the latest data
         run: |
           python outages.py
+          cd outage_data
           ls
       - name: export files
         run: |
