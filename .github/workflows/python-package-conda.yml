@@ -1,6 +1,9 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+name: Scraping 
+run-name: ${{ github.actor }} is scraping Xcel outages
+on: 
+  schedule:
+    - cron: "*/5 * * * *" # runs every 5 min
+  
 jobs:
   build:
     runs-on: ubuntu-latest
