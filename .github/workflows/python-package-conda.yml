@@ -2,7 +2,7 @@ name: Scraping
 run-name: ${{ github.actor }} is scraping Xcel outages
 on: 
   schedule:
-    - cron: '*/5 * * * *' # runs every 5 min
+    - cron: '55 * * * *' # runs every 5 min
   
 jobs:
   build:
