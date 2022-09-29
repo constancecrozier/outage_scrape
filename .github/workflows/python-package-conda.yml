@@ -17,5 +17,3 @@ jobs:
           python outage.py
         env:
           key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
-      - name: export index
-        .... # use crosponding script or actions to help export.
