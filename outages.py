@@ -22,6 +22,7 @@ def scrape():
 
     d = datetime.datetime.now()
     name = str(d.year)+'_'+str(d.month)+'_'+str(d.day)+'_'+str(d.hour)+'_'+str(d.minute)+'.txt'
+    print(name)
     f = open('outage_data/'+name,'w')
     for i in range(1,len(data)):
         f.write(data[i]+'\n')
