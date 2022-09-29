@@ -20,5 +20,6 @@ jobs:
       - name: execute py script # run the run.py to get the latest data
         run: |
           python outages.py
-        env:
-          key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
+      - name: export files
+        run: |
+          ls
