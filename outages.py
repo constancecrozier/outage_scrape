@@ -15,7 +15,7 @@ def scrape():
             i += 1
         i += 1
         j = i+1
-        while r[j:j+2] != '}}' and i < len(r)-1:
+        while r[j:j+2] != '}}' and j < len(r)-1:
             j += 1
         data.append(r[i:j])
         i = j
@@ -27,8 +27,7 @@ def scrape():
         f.write(data[i]+'\n')
     f.close()
 
-scrape()
-#while True:
-#    scrape()
-#    time.sleep(300)
+scrape()while True:
+    scrape()
+    time.sleep(300)
     
