@@ -27,7 +27,9 @@ def scrape():
         f.write(data[i]+'\n')
     f.close()
 
-scrape()while True:
-    scrape()
-    time.sleep(300)
+scrape()
+
+#while True:
+#    scrape()
+#    time.sleep(300)
     
