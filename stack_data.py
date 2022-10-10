@@ -8,7 +8,10 @@ files = ['2022_9_29_18_23.txt','2022_9_29_18_51.txt','2022_9_29_19_9.txt','2022_
 
 totals = {}
 totals_n = {}
+instances = {}
+n_t = 0
 for file in files:
+    n_t += 1
     # convert file name to timestamp here if I want
     with open('outage_data/'+file,'r') as csvfile:
         reader = csv.reader(csvfile)
@@ -28,12 +31,14 @@ for file in files:
             if zipcode not in totals:
                 totals[zipcode] = 0
                 totals_n[zipcode] = 0
-            totals[zipcode] += n
-            totals_n[zipcode] += n/n_t
+                instances[zipcode] = 0
+            totals[zipcode] += n*0.3
+            totals_n[zipcode] += n*0.3/n_t
+            instances[zipcode] += 1
 
 with open('totals/sum.csv','w') as csvfile:
     writer = csv.writer(csvfile)
-    writer.writerow(['Zipcode','Customer-5mins','Av time per customer (5mins)'])
+    writer.writerow(['Zipcode','Customer-Hours','Av time per customer (hrs)','% with issues'])
     for z in totals:
-        writer.writerow([z,totals[z],totals_n[z]])
+        writer.writerow([z,totals[z],totals_n[z],instances[z]*100/n_t])
             
