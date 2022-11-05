@@ -26,7 +26,8 @@ jobs:
           python outages.py
       - name: Push output files        
         run: |          
-          git config --global user.name "constancecrozier"              
+          git config --global user.name "constancecrozier"       
+          git config --global user.email "constance.crozier4@gmail.com"       
           git add --all      
           git commit -m "New Data"          
           git push
